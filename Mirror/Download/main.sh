@@ -9,9 +9,14 @@ download_url_x86="https://vscode.download.prss.microsoft.com/dbazure/download/st
 
 download_url_arm64="https://vscode.download.prss.microsoft.com/dbazure/download/stable/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/code_1.142.0-1792034974_arm64.deb"
 
+architecture(){
+	export download_url=$download_url_arm64
+}
+
 download(){
 	mkdir -p $to ; cd $to
 	wget -c $download_url
 }
 
+architecture
 download
